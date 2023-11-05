@@ -42,7 +42,7 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
-Reasoning for Bug fix
+Reasoning  
 The bug fix addresses the issues in the code because originally the code loops through the array and swaps places Once it reached halfway it would swap the places again, resulting in the original array. The fix makes sure we only loop through half the array with the expression ``array.length / 2``. Due to this change in the function, I created to a new variable ``temp`` to store the current value and then swap with the other side of the array ``arr[arr.length - 1 - i]``.  
 Part 2
 

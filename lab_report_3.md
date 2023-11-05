@@ -49,10 +49,12 @@ Part 2
 CHATGPT ANSWER
 
 Citation
-``“command line options using find” prompt. ChatGPT, 25 September GPT-3.5, OpenAI, 4 November 2023, chat.openai.com.``
+ChatGPT, personal communication, November 4, 2023
 
 ``find -name``:
-Example 1
+Example 1:
+Description: The ``-name`` option is used to search for files and directories with a specific name.
+Find all files named "example.txt" within the current directory and its subdirectories. 
 This command finds all the ``.txt`` files in ``\technical`` that start with "chapter" then
 prints it to the terminal. These can be files in any directory nested under ``\technical``.
 
@@ -80,7 +82,7 @@ technical/911report/chapter-10.txt
 technical/911report/chapter-11.txt
 ```
 
-Example 2
+Example 2:
 This command finds all the ``.txt`` files in ``\technical`` that start with "cc" then
 prints it to the terminal. These can be files in any directory nested under ``\technical``.
 
@@ -124,7 +126,7 @@ technical/biomed/cc343.txt
 ```
 
 ``find -type d``:
-Example 1
+Example 1:
 This command prints all the directories under the ``\technical`` directory given the path of ``technical``. 
 The ``d`` at the end of the command specifies ``directory``.
 
@@ -147,8 +149,8 @@ technical/biomed
 technical/911report
 ```
 
-Example 2
-This command specified a path directly to the ``media`` directory. By doing this, the only thing that was displayed was the 
+Example 2:
+This command specifies a path directly to the ``media`` directory. The only thing that was displayed was the 
 absolute path to the directory. i.e. ``technical/government/media``
 
 Input:
@@ -161,9 +163,8 @@ technical/government/media
 ```
 
 ``find -empty``:
-Example 1
-The command looks for an empty directory using ``empty``. Because ``technical`` is a directory that is full,
-it ouputs nothing to the terminal.
+Example 1:
+The command looks for an empty directory using ``empty``. ``technical`` is a full directory, outputs nothing to the terminal.
 
 Input:
 ```
@@ -172,21 +173,20 @@ find technical -empty
 Output:
 Nothing is output
 
-Example 2
-This command does the same thing and looks for an empty directory using ``empty``. Because ``technical/government/media`` 
-is a directory that is full, it ouputs nothing to the terminal.
+Example 2:
+This command looks for an empty directory using ``empty``. Because ``technical/government/media`` 
+is a full directory, it outputs nothing to the terminal.
 
 Input:
 ```
 find technical/government/media -empty
 ```
 Output:
-There is nothing to ouput 
+"No Output" 
 
 ``find -type f``:
-Example 1
-This command looks in ``\technical\911report`` for all files and displayed it to the terminal.
-If I were to only specift the ``911report`` directory itself, all files nested would be displayed.
+Example 1:
+This command looks in ``\technical\911report`` for all files and displays it to the terminal.
 
 Input:
 ```
@@ -215,8 +215,6 @@ technical/911report/chapter-11.txt
 
 Example 2
 This command looks in ``\government\About_LSC`` for all files and displayed it to the terminal.
-If I were to only specift the ``government`` directory itself, all files nested would be displayed.
-
 Input:
 ```
 find technical/government/About_LSC -type f

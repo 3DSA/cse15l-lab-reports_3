@@ -1,6 +1,6 @@
 # Part 1
 ## Failure-Inducing Input
-```ruby
+```
 @Test 
 public void testReverseInPlace() {
     int[] input1 = { 3, 5 };

@@ -22,7 +22,7 @@ public void testReverseInPlace() {
 The Symptom
 ![Image](Symptom.png)
 
-The Bug
+The Bug  
 Before Fix:
 ```
 static void reverseInPlace(int[] arr) {

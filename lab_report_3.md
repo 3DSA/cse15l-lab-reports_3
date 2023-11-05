@@ -1,5 +1,5 @@
-# Part 1
-## Failure-Inducing Input
+Part 1
+Failure-Inducing Input
 ```
 @Test 
 public void testReverseInPlace() {
@@ -9,8 +9,8 @@ public void testReverseInPlace() {
 }
 ```
 
-## Non-Failure Inducing Input
-```ruby
+Non-Failure Inducing Input
+```
 @Test 
 public void testReverseInPlace() {
     int[] input1 = { 3 };
@@ -19,20 +19,20 @@ public void testReverseInPlace() {
 }
 ```
 
-## The Symptom
+The Symptom
 ![Image](Symptom.png)
 
-## The Bug
-### Before Fix:
-```ruby
+The Bug
+Before Fix:
+```
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
 }
 ```
-### After Fix:
-```ruby
+After Fix:
+```
 static void reverseInPlace(int[] arr) {
     int temp = 0;
     for(int i = 0; i < arr.length / 2; i += 1) {
@@ -42,26 +42,26 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
-### Why this fix works
+Why this fix works
 This fix to the code works because, initially, the code would loop through the array and swap places but once reaching halfway
 through the array it would flip the places again. This just created the same array as we started with. The fix cuts the array
 in half and only loops through ``array.length / 2``. Then, because this a pass by value, I had to create a new ``temp`` variable 
 to store the current value then swap it with ``arr[arr.length - 1 - i]``
 
-# Part 2 (Using ``find``)
+Part 2 (Using ``find``)
 
-*** Material was sourced using ChatGPT ***
+CHATGPT ANSWER
 
-### Citation
+Citation
 ``“command line options using find” prompt. ChatGPT, 25 September GPT-3.5, OpenAI, 30 October 2023, chat.openai.com.``
 
-## ``find -name``:
-### Example 1
+``find -name``:
+Example 1
 This command finds all the ``.txt`` files in ``\technical`` that start with "chapter" then
 prints it to the terminal. These can be files in any directory nested under ``\technical``.
 
 Input:
-```ruby
+```
 find technical -name "chapter*.txt"
 ```
 Output:
@@ -84,12 +84,12 @@ technical/911report/chapter-10.txt
 technical/911report/chapter-11.txt
 ```
 
-### Example 2
+Example 2
 This command finds all the ``.txt`` files in ``\technical`` that start with "cc" then
 prints it to the terminal. These can be files in any directory nested under ``\technical``.
 
 Input:
-```ruby
+```
 find technical -name "cc*.txt"
 ```
 Output:
@@ -127,13 +127,13 @@ technical/biomed/cc1547.txt
 technical/biomed/cc343.txt
 ```
 
-## ``find -type d``:
-### Example 1
+``find -type d``:
+Example 1
 This command prints all the directories under the ``\technical`` directory given the path of ``technical``. 
 The ``d`` at the end of the command specifies ``directory``.
 
 Input:
-```ruby
+```
 find technical -type d
 ```
 Output:
@@ -151,12 +151,12 @@ technical/biomed
 technical/911report
 ```
 
-### Example 2
+Example 2
 This command specified a path directly to the ``media`` directory. By doing this, the only thing that was displayed was the 
 absolute path to the directory. i.e. ``technical/government/media``
 
 Input:
-```ruby
+```
 find technical/government/media -type d
 ```
 Output:
@@ -164,36 +164,36 @@ Output:
 technical/government/media
 ```
 
-## ``find -empty``:
-### Example 1
+``find -empty``:
+Example 1
 The command looks for an empty directory using ``empty``. Because ``technical`` is a directory that is full,
 it ouputs nothing to the terminal.
 
 Input:
-```ruby
+```
 find technical -empty
 ```
 Output:
 Nothing is output
 
-### Example 2
+Example 2
 This command does the same thing and looks for an empty directory using ``empty``. Because ``technical/government/media`` 
 is a directory that is full, it ouputs nothing to the terminal.
 
 Input:
-```ruby
+```
 find technical/government/media -empty
 ```
 Output:
 There is nothing to ouput 
 
-## ``find -type f``:
-### Example 1
+``find -type f``:
+Example 1
 This command looks in ``\technical\911report`` for all files and displayed it to the terminal.
 If I were to only specift the ``911report`` directory itself, all files nested would be displayed.
 
 Input:
-```ruby
+```
 find technical/911report -type f
 ```
 Output:
@@ -217,12 +217,12 @@ technical/911report/chapter-10.txt
 technical/911report/chapter-11.txt
 ```
 
-### Example 2
+Example 2
 This command looks in ``\government\About_LSC`` for all files and displayed it to the terminal.
 If I were to only specift the ``government`` directory itself, all files nested would be displayed.
 
 Input:
-```ruby
+```
 find technical/government/About_LSC -type f
 ```
 Output:

@@ -1,5 +1,5 @@
 Part 1  
-Failure-Inducing Input
+Failure-Inducing Input:
 ```
 @Test 
 public void testReverseInPlace() {
@@ -9,7 +9,7 @@ public void testReverseInPlace() {
 }
 ```
 
-Non-Failure Inducing Input
+Non-Failure Inducing Input:
 ```
 @Test 
 public void testReverseInPlace() {
@@ -19,7 +19,7 @@ public void testReverseInPlace() {
 }
 ```
 
-The Symptom
+The Symptom:
 ![Image](Symptom.png)
 
 The Bug  
@@ -42,7 +42,7 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
-Reasoning  
+Reasoning:  
 The bug fix addresses the issues in the code because originally the code loops through the array and swaps places Once it reached halfway it would swap the places again, resulting in the original array. The fix makes sure we only loop through half the array with the expression ``array.length / 2``. Due to this change in the function, I created to a new variable ``temp`` to store the current value and then swap with the other side of the array ``arr[arr.length - 1 - i]``.  
 Part 2
 
@@ -174,8 +174,8 @@ Output:
 Nothing is output
 
 Example 2:
-This command looks for an empty directory using ``empty``. Because ``technical/government/media`` 
-is a full directory, it outputs nothing to the terminal.
+Looks for an empty directory using ``empty``. Because ``technical/government/media`` 
+If it is a full directory, it outputs nothing to the terminal.
 
 Input:
 ```
@@ -186,7 +186,7 @@ Output:
 
 ``find -type f``:
 Example 1:
-This command looks in ``\technical\911report`` for all files and displays it to the terminal.
+Looks in ``\technical\911report`` for all files and displays it to the terminal.
 
 Input:
 ```
@@ -214,7 +214,7 @@ technical/911report/chapter-11.txt
 ```
 
 Example 2
-This command looks in ``\government\About_LSC`` for all files and displayed it to the terminal.
+Looks in ``\government\About_LSC`` for all files and displays it to the terminal.
 Input:
 ```
 find technical/government/About_LSC -type f

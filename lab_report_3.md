@@ -1,4 +1,4 @@
-Part 1
+Part 1  
 Failure-Inducing Input
 ```
 @Test 
@@ -42,18 +42,14 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
-Why this fix works
-This fix to the code works because, initially, the code would loop through the array and swap places but once reaching halfway
-through the array it would flip the places again. This just created the same array as we started with. The fix cuts the array
-in half and only loops through ``array.length / 2``. Then, because this a pass by value, I had to create a new ``temp`` variable 
-to store the current value then swap it with ``arr[arr.length - 1 - i]``
-
-Part 2 (Using ``find``)
+Reasoning for Bug fix
+The bug fix addresses the issues in the code because originally the code loops through the array and swaps places Once it reached halfway it would swap the places again, resulting in the original array. The fix makes sure we only loop through half the array with the expression ``array.length / 2``. Due to this change in the function, I created to a new variable ``temp`` to store the current value and then swap with the other side of the array ``arr[arr.length - 1 - i]``.  
+Part 2
 
 CHATGPT ANSWER
 
 Citation
-``“command line options using find” prompt. ChatGPT, 25 September GPT-3.5, OpenAI, 30 October 2023, chat.openai.com.``
+``“command line options using find” prompt. ChatGPT, 25 September GPT-3.5, OpenAI, 4 November 2023, chat.openai.com.``
 
 ``find -name``:
 Example 1
